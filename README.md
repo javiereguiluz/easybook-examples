@@ -28,10 +28,10 @@ You can now publish any of the sample books:
 
 ```
 $ cd easybook
-$ ./book publish easybook web --dir=../docs/
-$ ./book publish easybook website --dir=../docs/
-$ ./book publish easybook print --dir=../docs/
+$ ./book publish easybook web --dir=../docs/tech_book
+$ ./book publish easybook website --dir=../docs/tech_book
+$ ./book publish easybook print --dir=../docs/tech_book
 ```
 
-I will soon publish many more advanced examples of book publishing with 
+I will soon publish many more advanced examples of book publishing with
 **easybook**.
