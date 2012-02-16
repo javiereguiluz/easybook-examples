@@ -1,0 +1,54 @@
+book:
+    title:            "easybook test book"
+    author:           "Javier Eguiluz"
+    edition:          "First edition"
+    language:         en
+    publication_date: ~
+
+    generator: { name: easybook, version: 4.2 }
+
+    contents:
+        - { element: cover }
+        - { element: toc   }
+        - { element: lof   }
+        - { element: introduction, content: intro.md }
+        - { element: part, number: 1, title: 'Etiam facilisis' }
+        - { element: chapter, number: 1, content: chapter1.md }
+        - { element: chapter, number: 2, content: chapter2.md }
+        - { element: chapter, number: 3, content: chapter3.md }
+        - { element: part, number: 2, title: 'Donec tincidunt interdum elit' }
+        - { element: chapter, number: 4, content: chapter4.md }
+        - { element: chapter, number: 5, content: chapter5.md }
+        - { element: author, content: about-me.md }
+        - { element: acknowledgement, content: thanks.md }
+
+    editions:
+        print:
+            format:         pdf
+            highlight_code: true
+            include_styles: true
+            isbn:           ~
+            labels:         ['appendix', 'chapter', 'figure', 'table']
+            margin:
+                top:        25mm
+                bottom:     25mm
+                inner:      30mm
+                outter:     20mm
+            page_size:      A4
+            toc:
+                deep:       2
+                elements:   ["appendix", "chapter", "part"]
+            two_sided:      true
+
+        web:
+            format:         html
+            highlight_code: true
+            include_styles: true
+            labels:         ['appendix', 'chapter', 'figure', 'table']
+            toc:
+                deep:       2
+                elements:   ["appendix", "chapter"]
+
+        website:
+            extends:        web
+            format:         html_chunked

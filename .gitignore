@@ -1,0 +1,8 @@
+.tm_properties
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+tech_book/*/Output/*
+sf2
