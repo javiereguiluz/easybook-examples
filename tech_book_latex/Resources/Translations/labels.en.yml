@@ -1,0 +1,10 @@
+label:
+    chapter:
+        - 'Chapter {{ item.number }}'
+        - '<span>{{ item.counters[0:2]|join(".") }}</span>' # 1.1
+        - '<span>{{ item.counters[0:3]|join(".") }}</span>' # 1.1.1
+        - '<span>{{ item.counters[0:4]|join(".") }}</span>' # 1.1.1.1
+        - '<span>{{ item.counters[0:5]|join(".") }}</span>' # 1.1.1.1.1
+        - '<span>{{ item.counters[0:6]|join(".") }}</span>' # 1.1.1.1.1.1
+
+    figure: 'Figure {{ element.number }}.{{ item.number }}:'

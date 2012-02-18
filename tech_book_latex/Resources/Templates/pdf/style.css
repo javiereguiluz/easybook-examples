@@ -1,0 +1,319 @@
+/* Custom fonts
+   ------------------------------------------------------------------------- */
+
+/* Monospaced */
+@font-face {
+    font-family: lmmono10;
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/lmmono10-regular.otf");
+}
+
+/* Serif */
+@font-face {
+    font-family: cmu-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: url("./fonts/cmunrm.ttf");
+}
+
+@font-face {
+    font-family: cmu-serif;
+    font-style: normal;
+    font-weight: 700;
+    src: url("./fonts/cmunrb.ttf");
+}
+
+@font-face {
+    font-family: cmu-serif;
+    font-style: italic;
+    font-weight: 400;
+    src: url("./fonts/cmunsl.ttf");
+}
+
+@font-face {
+    font-family: cmu-serif;
+    font-style: italic;
+    font-weight: 700;
+    src: url("./fonts/cmunbl.ttf");
+}
+
+@font-face {
+    font-family: cmu-serif-extended;
+    font-style: normal;
+    font-weight: 700;
+    src: url("./fonts/cmunbx.ttf");
+}
+
+/* Base typography
+   ------------------------------------------------------------------------- */
+
+body, p, ul, ol {
+    font-family: cmu-serif, serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: cmu-serif-extended, serif;
+    font-weight: bold;
+}
+p, ul, ol {
+    font-size: 11.5pt;
+    hyphens: none;
+    line-height: 1.7;
+    text-align: justify;
+}
+li::marker {
+    font-size: 75%;
+}
+
+/* Basic styles
+   ------------------------------------------------------------------------- */
+p {
+    margin: 0;
+    text-indent: 3em;
+}
+ul, ol {
+    padding-left: .75cm;
+}
+ul + p, ol + p {
+    text-indent: 0;
+}
+
+/* Headings
+   ------------------------------------------------------------------------- */
+.page\:chapter h1 span {
+    display: block;
+    font-size: 20pt;
+    font-weight: bold;
+    margin-top: 4.75em;
+    margin-bottom: 1.5em;
+    text-transform: none;
+}
+.page\:chapter h1 {
+    font-size:  26pt;
+    margin-bottom:  1.8em;
+}
+.page\:chapter h2,
+.page\:chapter h3,
+.page\:chapter h4,
+.page\:chapter h5,
+.page\:chapter h6 {
+    display: table;
+}
+.page\:chapter h2 span,
+.page\:chapter h3 span,
+.page\:chapter h4 span,
+.page\:chapter h5 span,
+.page\:chapter h6 span {
+    display: table-cell;
+    width: 1.2cm;
+}
+.page\:chapter h2,
+.page\:author h2 {
+    font-size: 15pt;
+    margin:  1em 0;
+}
+.page\:chapter h3 {
+    font-size: 12pt;
+    margin:  1em 0;
+}
+
+.page\:lof h1,
+.page\:toc h1,
+.page\:introduction h1 {
+    font-size: 26pt;
+    font-weight: bold;
+    margin-top: 3.75em;
+    margin-bottom: 1.5em;
+    text-transform: none;
+}
+
+.page\:lof ul {
+    margin-top:  1em;
+}
+
+.page\:toc ul li,
+.page\:lof ul li {
+    line-height: 1;
+    margin: .2em 0;
+}
+.page\:toc ul li.level-1,
+.page\:toc ul li.level-1 a {
+    font-weight: bold;
+    margin-top: .5em;
+}
+.page\:toc ul li.level-1 span {
+    font-weight: normal;
+    font-size: 11.5pt !important;
+}
+.page\:toc ul li a > span {
+    padding-right: .8em;
+}
+.page\:toc ul li.level-1 a,
+.page\:toc ul li.level-2 a,
+.page\:toc ul li.level-3 a,
+.page\:toc ul li.level-4 a,
+.page\:toc ul li.level-5 a,
+.page\:toc ul li.level-6 a {
+    font-size: 11.5pt !important;
+    line-height: 1;
+    padding: 0;
+}
+.page\:toc ul li.level-2 {
+    margin-left: 1em;
+}
+.page\:toc ul li.level-3 {
+    margin-left: 3em;
+}
+
+.page\:toc ul li a span::after {
+    content: "";
+}
+
+.page\:toc a::after {
+    color: inherit;
+    content: leader('.  ') target-counter(attr(href), page);
+}
+.page\:toc li.level-1 a::after {
+    content: leader(' ') target-counter(attr(href), page);
+}
+
+.page\:acknowledgment h1,
+.page\:author h1,
+.page\:edition h1,
+.page\:license h1 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 1.75em;
+    margin-bottom: 1.5em;
+    text-align: center;
+    text-transform: none;
+}
+
+.page\:edition h2,
+.page\:license h2 {
+    font-size: 11.5pt;
+    margin-bottom: 1em;
+}
+.page\:edition p,
+.page\:license p {
+    text-indent: 0;
+}
+
+/* Cover
+   ------------------------------------------------------------------------- */
+.page\:cover * {
+    text-align: center;
+    text-indent: 0;
+}
+.page\:cover h1 {
+    font-family: cmu-serif-extended, serif;;
+    font-size: 14pt;
+    letter-spacing: 0;
+    margin-top: 0cm;
+    width: 100%;
+}
+.page\:cover h1 + p {
+    margin:  1.5em 0;
+}
+.page\:cover h2 {
+    font-family: cmu-serif-extended, serif;
+    font-size: 12pt;
+    width: 100%;
+    position: static;
+}
+.page\:cover p.about {
+    line-height: 1.2;
+    margin: 1em auto 1.5em;
+    width: 50%;
+}
+.page\:cover h3 {
+    font-size: 12pt;
+    margin: 2em 0 .5em 0;
+    text-transform: uppercase;
+}
+.page\:cover h4 {
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+.page\:cover div.person {
+    border-top: 1px solid #000;
+    width: 40%;
+    float: left;
+    margin: 3em 1em;
+}
+
+/* Page layout
+   ------------------------------------------------------------------------- */
+@page {
+    @top-left     { border: none; }
+    @top-right    { border: none;
+                    font-family: cmu-serif, serif;
+                    font-size:  11pt; }
+    @bottom-right {}
+    @bottom-left  {}
+}
+@page page_chapter {
+    @top-left     { content: '' !important; }
+    @top-right    { content: counter(page) !important; }
+    @bottom-right { content: '' !important; }
+    @bottom-left  { content: '' !important; }
+}
+@page page_chapter:first {
+    @top-left     { content: '' !important; }
+    @top-right    { content: counter(page) !important; }
+    @bottom-right { content: '' !important; }
+    @bottom-left  { content: '' !important; }
+}
+
+/* Figures
+   ------------------------------------------------------------------------- */
+div.figure {
+    text-align: center;
+    margin: 1em 0;
+}
+div.figure p.caption {
+    text-indent: 0;
+    text-align: center;
+}
+div.figure p.caption strong {
+    font-weight: normal;
+}
+
+/* Code
+   ------------------------------------------------------------------------- */
+code {
+    border: none;
+    background: none;
+    color: inherit;
+    font-family: lmmono10;
+    font-size:  11pt;
+    padding: 0;
+}
+
+pre {
+    border: none;
+    font-family: lmmono10;
+    font-size: 11pt;
+    padding-left: 0;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* Tables
+   ------------------------------------------------------------------------- */
+table {
+    width: auto;
+    margin: 0 auto;
+}
+table, th, td, table thead th, table th {
+    border: solid;
+    border-collapse: collapse;
+    border: 1px solid #000 !important;
+    font-family: inherit;
+    font-size: 11pt !important;
+    font-weight: normal;
+    padding: .25em;
+    text-align: left;
+    vertical-align: top;
+}

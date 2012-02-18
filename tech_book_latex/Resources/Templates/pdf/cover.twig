@@ -1,0 +1,27 @@
+<div class="page:cover new-page">
+
+<h1>{{ book.title }}</h1>
+<p>{{ app.getLabel('by') }}</p>
+<h2>{{ book.author }}</h2>
+
+<p class="about">A thesis submitted to the Faculty of Lorem Ipsum State University in partial fulfillment of the requirements for the Degree of Master of Science </p>
+
+<h3>Computer Engineering</h3>
+<p>Some City, CA</p>
+<p>{{ book.publication_date|default('now')|date('Y') }}</p>
+
+<h4>Approved By:</h4>
+
+<div class="person">
+    <p>Dr. Lorem Ipsum</p>
+</div>
+
+<div class="person">
+    <p>Dr. Dolor Sit</p>
+</div>
+
+<div class="person">
+    <p>Dr. Amet Lorem</p>
+</div>
+
+</div>
