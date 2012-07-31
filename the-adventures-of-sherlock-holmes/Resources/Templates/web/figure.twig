@@ -1,0 +1,7 @@
+<div class="figure{{ item.align ? ' '~item.align : '' }}" id="{{ item.slug }}">
+    {{ item.content }}
+
+{% if item.caption != '' %}
+    <p class="caption">{{ item.caption }}</p>
+{% endif %}
+</div>

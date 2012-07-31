@@ -1,0 +1,4 @@
+.item\:toc ul {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+}

@@ -1,0 +1,13 @@
+<div class="item item:lof">
+
+<h1>{{ item.title }}</h1>
+
+<ol>
+{% for item in app.get('publishing.list.images') if item|length > 0 %}
+    {% for entry in item %}
+        <li><a href="#{{ entry.item.slug }}">{{ entry.item.caption }}</a></li>
+    {% endfor %}
+{% endfor %}
+</ol>
+
+</div>

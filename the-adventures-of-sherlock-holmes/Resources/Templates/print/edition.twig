@@ -1,0 +1,13 @@
+<div class="item item:edition">
+
+<h1>About this edition</h1>
+
+<p><strong>{{ book.title }}</strong> <br/>by {{ book.author }}</p>
+
+<p><strong>Publication date</strong>: {{ book.publication_date|date(app.getLabel('date_format')) }}</p>
+
+<p>This book was published with <em>{{ book.generator.name }} v{{ book.generator.version }}</em>,
+an open-source book publishing application available at <a href="http://easybook-project.org">easybook-project.org</a>
+and developed by Javier Eguiluz using several Symfony components.</p>
+
+</div>

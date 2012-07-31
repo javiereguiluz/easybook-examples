@@ -1,0 +1,170 @@
+.item h1 {
+    font-family: inherit;
+    font-weight: normal;
+    letter-spacing: 3pt;
+    margin-bottom: 1em;
+    margin-top: 5em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.item\:cover h1, .item\:cover h2 {    
+    font-family: inherit;
+    letter-spacing: 0;
+    margin: 0 0 1em 0;
+    text-align: center;
+}
+.item\:cover h1 {
+    font-size: 40pt;
+    width: 100%;
+}
+.item\:cover h2 {
+    font-size: 28pt;
+    padding-bottom: 1em;
+}
+
+.item\:toc ul li a,
+.item\:lof ul li a {
+    font-size: 11pt;
+    font-weight: normal;
+    letter-spacing: 1pt;
+    text-transform: uppercase;
+}
+.item\:toc a::after,
+.item\:lof a::after {
+    color: inherit;
+    content: leader('.   ') target-counter(attr(href), page);
+    font-size: 11pt;
+    margin-left: .5em;
+}
+
+.item\:lof {
+    page-break-before: avoid;
+}
+
+@page page_chapter:first {
+    @top          { content: '' !important; border: none; }
+    @top-left     { content: '' !important; border: none; }
+    @top-right    { content: '' !important; border: none; }
+    @bottom-left  { content: '' !important; border: none; }
+    @bottom-right { content: '' !important; border: none; }
+}
+
+@page page_chapter:right {
+    @top-left     { content: counter(page); }
+    @top-right    { content: '' !important; }
+    @top-center   { content: string(book_title); }
+    @bottom-right { content: '' !important; }
+    @bottom-left  { content: '' !important; }
+
+    @top {
+        border: none !important;
+        color: #000;
+        font-family: inherit !important;
+        font-size: 8pt;
+        letter-spacing: 1pt;
+        text-transform: uppercase;
+    }
+
+    @top-right {
+        border: none !important;
+    }
+
+    @top-left {
+        border: none !important;
+        color: #000;
+        font-family: inherit !important;
+        margin-bottom: 0;
+        padding-top: 6pt;
+        text-transform: uppercase;
+        vertical-align: middle !important;
+    }
+}
+
+@page page_chapter:left {
+    @top-left     { content: '' !important; }
+    @top-right    { content: counter(page); }
+    @top-center   { content: string(chapter_title, first); }
+    @bottom-right { content: '' !important; }
+    @bottom-left  { content: '' !important; }
+
+        @top {
+        border: none !important;
+        color: #000;
+        font-family: inherit !important;
+        font-size: 8pt;
+        letter-spacing: 1pt;
+        text-transform: uppercase;
+    }
+
+    @top-right {
+        border: none !important;
+        color: #000;
+        font-family: inherit !important;
+        margin-bottom: 0;
+        padding-top: 6pt;
+        text-transform: uppercase;
+        vertical-align: middle !important;
+    }
+
+    @top-left {
+        border: none !important;
+    }
+}
+
+.item\:chapter h1 {
+    font-family: inherit;
+    font-size: 16pt;
+    font-weight: normal;
+    letter-spacing: 1pt;
+    margin-bottom: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    word-spacing: 2pt;
+}
+.item\:chapter h1 span {
+    color: inherit;
+    font-family: inherit;
+    font-size: 16pt;
+    font-weight: bold;
+    letter-spacing: 0;
+    margin-bottom: .75em;
+    text-transform: none;
+    word-spacing: normal;
+}
+.item\:chapter h2 {
+    font-family: inherit;
+    font-size: 14pt;
+    text-align: center;
+}
+
+.item\:chapter p {
+    margin: 0;
+}
+
+.item\:chapter p + p {
+    text-indent: 2em;
+}
+
+div.center * {
+    margin: 0 auto;
+    text-align: center !important;
+}
+.item\:chapter div.figure {
+    page-break-before: always;
+    page-break-after: always;
+}
+.item\:chapter div.figure p.caption strong {
+    display: none;
+}
+.item\:chapter div.figure p.caption {
+    font-size: 9pt;
+    letter-spacing: 1pt;
+    text-transform: uppercase;
+}
+.item\:chapter div.figure p.caption:before {
+    content: '\201C';
+}
+.item\:chapter div.figure p.caption:after {
+    content: '\201D';
+}

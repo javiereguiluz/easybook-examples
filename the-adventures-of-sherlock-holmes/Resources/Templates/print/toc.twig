@@ -1,0 +1,15 @@
+<div class="item item:toc">
+
+<h1>Contents</h1>
+
+<ul>
+{% for item in app.get('publishing.items') %}
+    {% if item.config.element in edition.toc.elements %}
+        <li class="{{ item.config.element }} level-{{ item.level }}">
+            <a href="#{{ item.slug }}"><span>{{ item.config.number }}</span> &mdash; {{ item.title }}</a>
+        </li>
+    {% endif %}
+{% endfor %}
+</ul>
+
+</div>
